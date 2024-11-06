@@ -1,0 +1,27 @@
+{
+    "name": "webdriverio-tests",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "wdio": "wdio run ./wdio.conf.js",
+        "lint": "npx eslint .   --color --fix --quiet"
+    },
+    "dependencies": {
+        "@wdio/cli": "^8.39.1",
+        "@wdio/dot-reporter": "^8.39.0",
+        "@wdio/local-runner": "^8.39.1",
+        "@wdio/mocha-framework": "^8.39.0",
+        "@wdio/selenium-standalone-service": "^8.14.0",
+        "@wdio/spec-reporter": "^8.39.0",
+        "wdio-html-nice-reporter": "^8.1.6"
+    },
+    "devDependencies": {
+        "@types/node": "^20.14.11",
+        "chai": "^4.0.2",
+        "chai-webdriverio": "^1.0.0",
+        "eslint": "^8.57.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-wdio": "^8.37.0"
+    }
+}

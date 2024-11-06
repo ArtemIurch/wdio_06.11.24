@@ -1,0 +1,29 @@
+name: Launch WDIO tests
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  wdio-tests:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install Node JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm ci
+      - name: Run WebdriverIO tests
+        run: npm run wdio
+      - name: Upload report to GitHub Actions Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wdio-report
+          path: reports/
+          retention-days: 7
